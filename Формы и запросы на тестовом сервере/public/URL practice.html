@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL</title>
+</head>
+<body>
+    <script>
+        let path = 'http://site.ru:3000/dir/eee/page.html#show?a=1&b=2&c=3';
+        let url = new URL(path);
+        console.log(url.protocol);
+        console.log(url.host); 
+        console.log(url.hostname);
+        console.log(url.port);
+        console.log(url.pathname);
+        console.log(url.hash);
+        console.log(url.search);
+    </script>
+</body>
+</html>

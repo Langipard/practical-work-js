@@ -1,0 +1,124 @@
+body {
+  font-size: 15px;
+  font-family: "Open Sans", sans-serif;
+  color: #444;
+  background-color: #fefefe;
+  background-image: linear-gradient(#fc6c48 0%, #ef5081 100%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-left: 50px;
+  margin: 10px;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-div {
+  position: relative;
+  left: 30%;
+  border-radius: 5px;
+  background-color: #f4f7fc;
+  width: 450px;
+  height: 600px;
+}
+
+.head-description {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.date {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+
+.task-reminder {
+  margin-top: 15px;
+}
+
+.task-holder {
+  position: relative;
+  display: inline-block;
+  width: 350px;
+  height: 40px;
+  resize: none;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+.confirm-button {
+  position: absolute;
+  display: inline-block;
+  background-color: #dddddd;
+  color: white;
+  width: 50px;
+  text-align: center;
+  font-size: 30px;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  user-select: none;
+  border-radius: 3px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.confirm-button:hover {
+  background-color: white;
+  color: black;
+}
+
+.body-div {
+  text-align: center;
+}
+
+.description {
+  margin: 10px;
+}
+
+.incompleted-main-div,
+.completed-main-div {
+  width: auto;
+  height: 175px;
+  margin-top: 30px;
+  overflow: auto;
+  user-select: none;
+}
+
+.completed-div,
+.incompleted-div {
+  padding-left: 7px;
+  border-radius: 3px;
+  background-color: #e0e8f5;
+  margin: 5px 5px 0px 5px;
+  text-align: left;
+  user-select: none;
+}
+
+.incompleted-div:hover {
+  transition: 1s;
+  text-decoration: line-through;
+  background-color: #8bb4f5;
+}
+
+.completed-div:hover {
+  transition: 1s;
+  text-decoration: none;
+  background-color: #8bb4f5;
+}
+
+.completed-div {
+  text-decoration: line-through;
+}
+
+.cancel-button {
+  float: right;
+}
+
+.footer-div {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  margin-top: 15px;
+}

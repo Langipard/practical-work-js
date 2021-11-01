@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formData</title>
+</head>
+<body>
+    <div>Test formData</div>
+    <form action="/target/" method="POST">
+        <input name="test1" value="123">
+        <input name="test2" value="456">
+        <input name="test3" value="789">
+        <!-- <input type="submit"> -->
+    </form>
+    <button>получить данные в виде FormData</button>
+    <script>
+        let form = document.querySelector('form');
+        let button = document.querySelector("button");
+        button.addEventListener("click", function(event){
+            let formData = new FormData(form);
+            formData.append("test4", "987");
+            formData.delete("test2");
+            console.log(Array.from(formData));
+            for (let value of formData.values()) {
+                console.log(value);
+            }
+        })
+    </script>
+</body>
+</html>

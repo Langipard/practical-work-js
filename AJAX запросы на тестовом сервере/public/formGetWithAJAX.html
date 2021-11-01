@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formGetWithFetch</title>
+</head>
+<body>
+    <form action="" method="GET">
+        <input type="number" name="num1">
+        <input type="number" name="num2">
+        <input type="number" name="num3">
+        <input type="submit">
+    </form>
+    <div>Впишите в формы три числа, и мы вернем вам сумму</div>
+    <script>
+        let div = document.querySelector("div");
+        let form = document.querySelector('form');
+        let input1 = document.querySelector('[name="num1"]');
+        let input2 = document.querySelector('[name="num2"]');
+        let input3 = document.querySelector('[name="num3"]');
+        form.addEventListener('submit', function (event) {
+            let searchParams = new URLSearchParams();
+            searchParams.set('num1', input1.value);
+            searchParams.set('num2', input2.value);
+            searchParams.set('num3', input3.value);
+            let path = '/formWithFetch/?' + searchParams.toString();
+
+            fetch(path).then(
+                    response => {
+                        return response.text();
+                    }
+                ).then(
+                    text => {
+                        div.textContent = text;
+                    }
+                );
+
+                event.preventDefault();
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+<body>
+    <div>Даны три кнопки и див. На сервере даны три страницы. Сделайте так, 
+        чтобы каждая из кнопок подгружала в див соответствующую страницу.</div>
+    <button id="1">Загрузить первую страницу</button>
+    <button id="2">Загрузить вторую страницу</button>
+    <button id="3">Загрузить третюю страницу</button>
+    <script>
+        let div = document.querySelector("div");
+        document.body.onclick = (event) => {
+            if (event.target.tagName != 'BUTTON') return;
+            else {
+                fetch('/page' + event.target.id + '.html').then
+                (response => {
+                    return response.text();
+                }).then
+                (text => {
+                    div.innerHTML = text;
+                }) 
+                console.log(event.target.id)
+            }
+        }
+    </script>
+</body>
+</html>

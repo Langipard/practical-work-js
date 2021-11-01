@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form action="/handler_GET/" method="GET">
+        <div> 
+            Введите вашу почту
+        </div>
+        <input name="email" id="email">
+        <input type="submit">
+    </form>
+    <script>
+        let form = document.querySelector('form');
+        let emailInput = document.querySelector("#email")
+        form.addEventListener("submit", function(event) {
+            if (emailInput.value.includes("@") == false) {
+                event.preventDefault();
+                let div = document.createElement("div");
+                div.textContent = "Введите правильную почту";
+                div.style.color = "red";
+                form.append(div)
+            }
+        })
+    </script>
+</body>
+</html>

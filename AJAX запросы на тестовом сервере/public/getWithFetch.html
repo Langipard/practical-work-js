@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>передача параметров</title>
+</head>
+<body>
+    <div>Первая кнопка получает сумму запрашиваемых чисел, а вторая ищет 
+        запрашиваемый элемент массива
+    </div>
+    <button id='button1'>summ</button>
+    <button id='button2'>getElemOfArr</button>
+    <script>
+        let div = document.querySelector('div');
+        let button1 = document.querySelector('#button1');
+        let button2 = document.querySelector("#button2")
+        button1.addEventListener('click', function () {
+                fetch('/sumNumb/?num1=3&num2=5').then(
+                    response => {
+                        return response.text();
+                    }
+                ).then(
+                    text => {
+                        div.innerHTML = text; // запишем ответ сервера
+                    }
+                );
+            });
+        button2.addEventListener('click', function () {
+                fetch('/searchElemOfArray/?num=7').then(
+                response => {
+                        return response.text();
+                    }
+                ).then(
+                    text => {
+                        div.innerHTML = text; // запишем ответ сервера
+                    }
+                );
+            });
+    </script>
+</body>
+</html>

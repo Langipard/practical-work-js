@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POST</title>
+</head>
+<body>
+    <form action="" method="POST">
+        <input type="number" name="num1">
+        <input type="number" name="num2">
+        <input type="number" name="num3">
+        <input type="number" name="num4">
+        <input type="number" name="num5">
+        <input type="submit">
+    </form>
+    <div>Методом POST получаем среднее арифметическое всех инпутов</div>
+    <script>
+        let form = document.querySelector("form");
+        let div = document.querySelector("div")
+        form.addEventListener('submit', function (event) {
+                let promise = fetch('/PostWithFetch/', {
+                    method: 'POST',
+                    body: new FormData(this),
+                }).then(
+                    response => {
+                        return response.text();
+                    }
+                ).then(
+                    text => {
+                        div.textContent = text;
+                    }
+                )
+
+                event.preventDefault();
+            });
+    </script>
+</body>
+</html>

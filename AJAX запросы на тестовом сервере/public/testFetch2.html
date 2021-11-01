@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>Пусть на сервере есть пять страниц. Пусть первое нажатие на кнопку
+        подгружает первую страницу, второе нажатие - вторую, и так далее, 
+        пока страницы не закончатся.</div>
+    <button>click me</button>
+    <script>
+        let button = document.querySelector("button");
+        let div = document.querySelector("div");
+        let i = 1;
+        button.addEventListener("click", () => {
+            let pageUrl = '/page' + i + '.html';
+            fetch(pageUrl).then(
+                    response => {
+                    if (response.status == 404) {
+                        throw Error("Страницы закончились");
+                    }
+                    return response.text();
+                }).then(
+                    text => {
+                    div.innerHTML = text;
+                }).catch(error => {
+                    div.innerHTML = error;
+                })
+            i++;
+        })
+    </script>
+</body>
+</html>

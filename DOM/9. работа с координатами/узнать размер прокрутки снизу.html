@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ширина прокрутки</title>
+    <style>
+        .body {
+            background-color: #323231;
+        }
+
+        .table {
+            margin: 0px auto;
+            border: 20px solid #7e956b;
+            background-color: #794f45;
+            width: 500px;
+            height: 300px;
+            padding: 15px;
+            font-size: 20px;
+            overflow: auto;
+            line-height: 150%;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="body">
+    <div class="table">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Culpa sed nobis tempora? Tempora consequatur doloribus dolorum
+        dignissimos, temporibus placeat laboriosam! Optio iste quas
+        distinctio maiores natus, voluptatibus vitae saepe voluptate.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Culpa sed nobis tempora? Tempora consequatur doloribus dolorum
+        dignissimos, temporibus placeat laboriosam! Optio iste quas
+        distinctio maiores natus, voluptatibus vitae saepe voluptate.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Culpa sed nobis tempora? Tempora consequatur doloribus dolorum
+        dignissimos, temporibus placeat laboriosam! Optio iste quas
+        distinctio maiores natus, voluptatibus vitae saepe voluptate.
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+        Culpa sed nobis tempora? Tempora consequatur doloribus dolorum
+        dignissimos, temporibus placeat laboriosam! Optio iste quas
+        distinctio maiores natus, voluptatibus vitae saepe voluptate.
+    </div>
+    <script>
+        let div = document.querySelector('div');
+        let result = div.scrollHeight - div.scrollTop - div.clientHeight;
+    </script>
+</body>
+
+</html>
