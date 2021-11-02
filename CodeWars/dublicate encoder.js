@@ -4,8 +4,9 @@ function duplicateEncode(word) {
 
     letters.forEach(function (letter) {
         letterCount[letter] = (letterCount[letter] || 0) + 1;
-        console.log(letterCount)
     });
+
+    console.log(letterCount)
 
     return letters.map(function (letter) {
         return letterCount[letter] === 1 ? '(' : ')';

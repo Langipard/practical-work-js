@@ -19,7 +19,7 @@ export default {
     console.log(post);
     let userData = {
       login: "Illya",
-      password: "parol",
+      password: "password",
     };
     if (userData.login == post.login && userData.password == post.password) {
       return "REGISTERED";

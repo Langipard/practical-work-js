@@ -13,12 +13,12 @@ export default {
     return Number(get.num1) + Number(get.num2) + Number(get.num3);
   },
   "/PostWithFetch/": function ({ post }) {
-    let summ =
+    let sum =
       Number(post.num1) +
       Number(post.num2) +
       Number(post.num3) +
       Number(post.num4) +
       Number(post.num5);
-    return summ / 5;
+    return sum / 5;
   },
 };
