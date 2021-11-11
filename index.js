@@ -1,5 +1,5 @@
-function fibonacci(numb) {
-    return numb <= 1 ? numb : fibonacci(numb - 1) + fibonacci(numb - 2);
+var a = 1;
+b = function a(x) {
+    x && a(--x);
 }
-
-console.log(fibonacci(7))
+console.log(a)
